@@ -57,7 +57,6 @@ const Registration = () => {
 
   return (
     <>
-      <Header />
       <Box
         sx={{
           display: "flex",

@@ -1,0 +1,33 @@
+.portfolio-container {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.portfolio-container h1{
+    color:#0b1201;
+}
+
+.portfolio-container p{
+    font-size: 20px;
+    color: black;
+}
+
+
+.div{
+  background-color: white;
+  padding: 20px 0;
+}
+
+.filter-buttons{
+  border-color: green;
+  border-radius: 50%;
+}
+
+.hover-effect {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }

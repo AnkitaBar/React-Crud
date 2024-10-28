@@ -1,0 +1,54 @@
+.carousel-container {
+    max-width: 100vw;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .carousel-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    overflow: hidden;
+  }
+  
+  .carousel-slide img {
+    object-fit: cover;
+    width: 100vw;
+    height: auto;
+    opacity: 0.7;
+  }
+  
+  .carousel-content {
+    position: absolute;
+    left: 10%;
+    color: white;
+    max-width: 500px;
+  }
+  
+  .carousel-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .carousel-content p {
+    font-size: 1rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  
+  .shop-now-button {
+    background-color: #a384ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .shop-now-button:hover {
+    background-color: #8a69e4;
+  }
+  

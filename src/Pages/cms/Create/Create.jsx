@@ -4,8 +4,10 @@ import axios from 'axios';
 import Header from '../../layout/Header/Header';
 import { Box, TextField, Typography, Avatar, Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import axiosInstance from '../../../Helper/Helper';
+
+
 import { toast } from 'react-toastify';
+import axiosInstance from '../../../Helper/Helper';
 
 const Create = () => {
   const { 
@@ -40,7 +42,6 @@ const Create = () => {
   
   return (
     <>
-      <Header />
       <Box
         sx={{
           display: 'flex',

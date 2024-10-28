@@ -1,0 +1,57 @@
+.team-container {
+  max-width: 1200px; /* Adjust this width as needed */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 60px 30px; /* Adds padding on all sides */
+  text-align: center;
+}
+.team-container h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.team-container p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: flex; 
+  justify-content: space-around; 
+  flex-wrap: wrap; 
+  gap: 10px;
+}
+
+.team-card {
+  width: 200px; 
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.team-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.team-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.team-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+.team-card:hover {
+  transform: scale(1.05); 
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

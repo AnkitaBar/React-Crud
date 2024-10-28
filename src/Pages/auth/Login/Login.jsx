@@ -14,9 +14,10 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
 import Header from '../../layout/Header/Header';
-import axiosInstance from '../../../Helper/Helper';
 import { toast } from 'react-toastify';
 import CircularProgress from '@mui/material/CircularProgress'; // Import CircularProgress
+import axiosInstance from '../../../Helper/Helper';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
@@ -24,29 +25,37 @@ export default function SignUp() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loading, setLoading] = useState(false); // Loading state
 
+  const navigate = useNavigate("product")
+
   const onSubmit = async (data) => {
     setLoading(true); // Set loading to true when submission starts
     const formData = new FormData();
     formData.append("email", data.email);
     formData.append("password", data.password);
     
+
     try {
       const response = await axiosInstance.post(`/user/signin`, formData);
-      const token = response.data.token;
-      console.log(response.data)
-      toast.success(`${response.data.message}`);
-      localStorage.setItem('token', token); // Store token
+      console.log('API Response:', response.data);
+      if(response.data.status===200){
+        localStorage.setItem('token', response.data.token);
+        toast(`${response.data.message}`);
+        navigate('/product');
+        setLoading(false);
+      }else{
+        setLoading(false);
+        toast(`${response.data.message}`);
+      }
+      
     } catch (error) {
-      toast.error("Login failed, please try again.");
-      console.log("LoginError", error);
-    } finally {
-      setLoading(false); // Set loading to false after request finishes
+      console.error('API Error:', error.message);
+      setLoading(false);
     }
   };
+  
 
   return (
     <>
-      <Header />
       <ThemeProvider theme={defaultTheme}>
         <div style={{
           display: 'flex',

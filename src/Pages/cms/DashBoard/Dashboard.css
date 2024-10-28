@@ -1,0 +1,25 @@
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    background-color: black; 
+    color: #fff
+  }
+  
+  .card {
+    text-align: center;
+  }
+  
+  .card h2 {
+    font-size: 48px;
+    margin: 0;
+  }
+  
+  .card p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #bbb;
+    margin-top: 5px;
+  }
+  
