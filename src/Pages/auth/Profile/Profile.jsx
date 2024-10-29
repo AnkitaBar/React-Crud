@@ -1,11 +1,13 @@
 import { Avatar, Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import useDarkMode from 'use-dark-mode';
-import axiosInstance from '../../../Helper/Helper';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import axiosInstance, { profile_pic } from '../../../Helper/Helper';
 
 const Profile = () => {
-  const [user, setUser] = useState(null);
-  const[Loading, setLoading] = useState(false);
+  const [user, setUser] = useState({});
+  const[loading, setLoading] = useState(true);
   let darkMode = useDarkMode();
 
 
@@ -43,7 +45,7 @@ useEffect(() => {
           }}
         >
           <Avatar
-            src={user?.profile_picture || '/default-avatar.png'} // Show default avatar if user data is unavailable
+            src={profile_pic(user.profile_pic) || '/default-avatar.png'} // Show default avatar if user data is unavailable
             alt={`${user?.first_name || 'Loading'} ${user?.last_name || ''}`} // Corrected template literal
             sx={{
               width: 100,
@@ -59,20 +61,20 @@ useEffect(() => {
               gutterBottom
               sx={{ fontWeight: 'bold', color: darkMode.value ? '#fff' : '#333' }}
             >
-              {`${user?.first_name} ${user?.last_name}`}
-            </Typography>
+              {loading ? <Skeleton width={200} /> : `${user.first_name} ${user.last_name}`} 
+              </Typography>
             <Typography
               variant="body1"
               sx={{ marginBottom: '8px', fontStyle: 'italic', color: darkMode.value ? '#fff' : '#333' }}
             >
-              Email: {user?.email}
-            </Typography>
+              {loading ? <Skeleton width={250} /> : `Email: ${user.email}`} 
+              </Typography>
             <Typography
               variant="body1"
               sx={{ marginBottom: '16px', fontStyle: 'italic', color: darkMode.value ? '#fff' : '#333' }}
             >
-              {`Role: ${user?.role_data?.roleDisplayName || 'N/A'}`}
-            </Typography>
+              {loading ? <Skeleton width={150} /> : `Role: ${user.role_data?.roleDisplayName || 'N/A'}`} 
+              </Typography>
           </CardContent>
         </Card>
       </Grid>

@@ -48,6 +48,7 @@
 
 import { Switch } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import useDarkMode from 'use-dark-mode';
 

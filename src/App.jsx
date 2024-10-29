@@ -12,6 +12,7 @@ import Header from './Pages/layout/Header/Header';
 import Footer from './Pages/layout/Footer/Footer';
 import toast from 'react-hot-toast';
 import Profile from './Pages/auth/Profile/Profile';
+import { Box, CircularProgress } from '@mui/material';
 
 const Login = lazy(()=> import(`./Pages/auth/Login/Login`))
 const Registration = lazy(()=> import(`./Pages/auth/Registration/Registration`))
@@ -51,7 +52,18 @@ function App() {
 
   return (
     <>
-    <Suspense fallback={<div> Loading.... </div>}>
+    <Suspense fallback={
+       <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '100vh',
+                    }}
+                  >
+                    <CircularProgress />
+                  </Box>
+    }>
       <Router>
         <Header />
         <Routes>

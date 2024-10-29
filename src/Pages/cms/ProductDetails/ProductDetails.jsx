@@ -136,12 +136,11 @@ import React, { useEffect, useState } from 'react';
 import {
   TextField,
   Button,
-  Container,
-  Stack,
   Typography,
   CircularProgress,
+  Box,
 } from '@mui/material';
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import axiosInstance from '../../../Helper/Helper';
@@ -160,7 +159,6 @@ const ProductDetails = () => {
     formState: { errors },
   } = useForm();
 
-  // Fetch product details on component mount
   useEffect(() => {
     fetchData();
   }, []);
@@ -174,7 +172,6 @@ const ProductDetails = () => {
     }
   };
 
-  // Set form default values when product data is fetched
   useEffect(() => {
     if (product) {
       setValue("title", product?.title);
@@ -208,71 +205,89 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: 'lightgray', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', padding: '3rem' }}>
-        <div style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '5px', boxShadow: "-1px 0px 8px 2px rgba(0,0,0,0.36)", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography variant="h5" mb={1}>Product Details</Typography>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <TextField
-              {...register("title", {
-                required: "Product Title is required",
-              })}
-              fullWidth
-              margin="normal"
-              variant="outlined"
-              error={!!errors.title}
-              helperText={errors.title && errors.title.message}
-              sx={{ backgroundColor: 'white', borderRadius: '5px', mb: 4 }}
-            />
-
-            <TextField
-              {...register("description", {
-                required: "Description is required",
-              })}
-              type='text'
-              variant='outlined'
-              fullWidth
-              error={!!errors.description}
-              helperText={errors.description && errors.description.message}
-              sx={{ backgroundColor: 'white', borderRadius: '5px', mb: 4 }}
-            />
-
-            <div className="mb-3">
-              <input
-                type="file"
-                onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
-                accept="image/*"
-                className="form-control"
+      {isLoading ? (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            zIndex: 1000,
+          }}
+        >
+          <CircularProgress color="primary" />
+        </Box>
+      ) : (
+        <div style={{ backgroundColor: 'lightgray', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', padding: '3rem' }}>
+          <div style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '5px', boxShadow: "-1px 0px 8px 2px rgba(0,0,0,0.36)", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <Typography variant="h5" mb={1}>Product Details</Typography>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <TextField
+                {...register("title", {
+                  required: "Product Title is required",
+                })}
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                error={!!errors.title}
+                helperText={errors.title && errors.title.message}
+                sx={{ backgroundColor: 'white', borderRadius: '5px', mb: 4 }}
               />
-              {image ? (
-                <img
-                  height="60px"
-                  src={URL.createObjectURL(image)}
-                  alt="Preview"
-                  className="upload-img"
+
+              <TextField
+                {...register("description", {
+                  required: "Description is required",
+                })}
+                type='text'
+                variant='outlined'
+                fullWidth
+                error={!!errors.description}
+                helperText={errors.description && errors.description.message}
+                sx={{ backgroundColor: 'white', borderRadius: '5px', mb: 4 }}
+              />
+
+              <div className="mb-3">
+                <input
+                  type="file"
+                  onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
+                  accept="image/*"
+                  className="form-control"
                 />
-              ) : (
-                product?.image && (
+                {image ? (
                   <img
-                    height="90px"
-                    src={`https://wtsacademy.dedicateddevelopers.us/uploads/product/${product.image}`}
-                    alt="Existing"
+                    height="60px"
+                    src={URL.createObjectURL(image)}
+                    alt="Preview"
                     className="upload-img"
                   />
-                )
-              )}
-            </div>
+                ) : (
+                  product?.image && (
+                    <img
+                      height="90px"
+                      src={`https://wtsacademy.dedicateddevelopers.us/uploads/product/${product.image}`}
+                      alt="Existing"
+                      className="upload-img"
+                    />
+                  )
+                )}
+              </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
-              <Button variant="contained" type="submit" disabled={isLoading}>
-                {isLoading ? <CircularProgress color="inherit" size={30} /> : "Update"}
-              </Button>
-            </div>
-          </form>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
+                <Button variant="contained" type="submit" disabled={isLoading}>
+                  Update
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
 
 export default ProductDetails;
-
