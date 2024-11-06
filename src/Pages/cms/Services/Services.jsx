@@ -4,24 +4,24 @@ import './Services.css'; // Custom styling (optional)
 const Services = () => {
   const servicesData = [
     {
-      title: 'Aerobic',
+      title: 'boAt Airdopes Atom 83',
       subtitle: 'World class coaching',
       description: 'There are many variations of passages of Lorem Ipsum...',
-      imgSrc: 'https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg', // replace with actual image URLs
+      videoSrc: 'https://www.boat-lifestyle.com/cdn/shop/files/quinn_Bejc8URjU1NSXdhabLCmD.mp4',
       aos: 'fade-up'
     },
     {
-      title: 'Body Building',
+      title: 'boAt Storm Pro Call',
       subtitle: 'Best body building techniques',
       description: 'There are many variations of passages of Lorem Ipsum...',
-      imgSrc: 'https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg',
+      videoSrc: 'https://www.boat-lifestyle.com/cdn/shop/files/quinn_RUxbhR7CvjkNtlFUDxgw9.mp4',
       aos: 'fade-up'
     },
     {
-      title: 'Yoga',
+      title: 'boAt Aavante bar 5400D',
       subtitle: 'In-house expert trainer',
       description: 'There are many variations of passages of Lorem Ipsum...',
-      imgSrc: 'https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg',
+      videoSrc: 'https://www.boat-lifestyle.com/cdn/shop/files/quinn_j1TwOEeceKYOJc7d7mAim.mp4',
       aos: 'fade-up'
     }
   ];
@@ -35,7 +35,14 @@ const Services = () => {
       <div className="services-grid">
         {servicesData.map((service, index) => (
           <div className="service-card" data-aos={service.aos} key={index}>
-            <img src={service.imgSrc} alt={service.title} className="service-img" />
+            <video 
+              src={service.videoSrc} 
+              className="service-video" 
+              controls 
+              muted 
+              loop 
+              autoPlay 
+            />
             <div className="service-content">
               <h3>{service.title}</h3>
               <h4>{service.subtitle}</h4>

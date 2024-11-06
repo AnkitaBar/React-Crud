@@ -6,14 +6,29 @@ import "./Portfolio.css";
 
 // Sample project data
 const projects = [
-  { id: 1, name: "Project Name 1", category: "Web Design", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img1.jpg" },
-  { id: 2, name: "Project Name 2", category: "Photography", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img2.jpg" },
-  { id: 3, name: "Project Name 3", category: "Print", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img3.jpg" },
-  { id: 4, name: "Project Name 4", category: "Web Design", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img4.jpg" },
-  { id: 5, name: "Project Name 5", category: "Photography", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img7.jpg" },
-  { id: 6, name: "Project Name 6", category: "Print", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img5.jpg" },
-  { id: 7, name: "Project Name 7", category: "Web Design", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img6.jpg" },
-  { id: 8, name: "Project Name 8", category: "Photography", image: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/portfolio/img8.jpg" },
+  { id: 1, name: "Project Name 1", category: "Best Sellers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/lifestyle-render_7e4ff0fd-6dde-4158-8dcf-ea4f9c5b6e2c.jpg?v=1727319135" },
+
+  { id: 2, name: "Project Name 2", category: "Top Earbuds", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/131_f04f74fd-45d4-4614-85cf-6ccf69c4cf90.jpg?v=1691395049" },
+
+  { id: 3, name: "Project Name 3", category: "Top Watches", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Lifestyle_render.jpg?v=1727157307" },
+
+  { id: 4, name: "Project Name 4", category: "Best Sellers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AD_141.png?v=1703145765" },
+
+  { id: 5, name: "Project Name 5", category: "Top Earbuds", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Airdopes_138_Pro.jpg?v=1702618467" },
+
+  { id: 6, name: "Project Name 6", category: "Top Watches", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Lifestyle_render_154400cd-4bd3-4dd8-9c4a-e56f27910199.jpg?v=1729580370" },
+
+  { id: 7, name: "Project Name 7", category: "Best Sellers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/X400.jpg?v=1702526246" },
+
+  { id: 8, name: "Project Name 8", category: "Top Earbuds", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AD_91.jpg?v=1706776330" },
+
+  { id: 9, name: "Project Name 8", category: "Top Speakers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Stone_350.jpg?v=1701847157" },
+
+  { id: 10, name: "Project Name 8", category: "Top Speakers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/S190PRO_FI_Blue_04.png?v=1718780392" },
+
+  { id: 11, name: "Project Name 8", category: "Top Speakers", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Stone_580.jpg?v=1692255219" },
+
+  { id: 12, name: "Project Name 3", category: "Top Watches", image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Storm_Pro_Call.jpg?v=1702361107" },
 ];
 
 const Portfolio = () => {
@@ -56,28 +71,28 @@ const Portfolio = () => {
         <div className='filter-buttons'>
           <Box display="flex" justifyContent="center" mb={4}>
             <Button 
-              variant={selectedCategory === 'All' ? 'contained' : 'outlined'} 
-              onClick={() => handleFilterChange('All')} 
+              variant={selectedCategory === 'Best Sellers' ? 'contained' : 'outlined'} 
+              onClick={() => handleFilterChange('Best Sellers')} 
               sx={{ margin: 1 }}>
-              All
+             Best Sellers
             </Button>
             <Button 
-              variant={selectedCategory === 'Web Design' ? 'contained' : 'outlined'} 
-              onClick={() => handleFilterChange('Web Design')} 
+              variant={selectedCategory === 'Top Earbuds' ? 'contained' : 'outlined'} 
+              onClick={() => handleFilterChange('Top Earbuds')} 
               sx={{ margin: 1 }}>
-              Web Design
+              Top Earbuds
             </Button>
             <Button 
-              variant={selectedCategory === 'Photography' ? 'contained' : 'outlined'} 
-              onClick={() => handleFilterChange('Photography')} 
+              variant={selectedCategory === 'Top Speakers' ? 'contained' : 'outlined'} 
+              onClick={() => handleFilterChange('Top Speakers')} 
               sx={{ margin: 1 }}>
-              Photography
+              Top Speakers
             </Button>
             <Button 
-              variant={selectedCategory === 'Print' ? 'contained' : 'outlined'} 
-              onClick={() => handleFilterChange('Print')} 
+              variant={selectedCategory === 'Top Watches' ? 'contained' : 'outlined'} 
+              onClick={() => handleFilterChange('Top Watches')} 
               sx={{ margin: 1 }}>
-              Print
+              Top Watches
             </Button>
           </Box>
         </div>

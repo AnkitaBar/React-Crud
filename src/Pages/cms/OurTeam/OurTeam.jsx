@@ -13,24 +13,24 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: "James Rally",
+      name: "For Fitness",
       title: "CEO",
-      imgSrc: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/team/img1.jpg", 
+      imgSrc: "https://www.boat-lifestyle.com/cdn/shop/files/jemmi_d1dd51d5-8b8b-47ad-9920-f8594669cbb2.png?v=1726059408", 
     },
     {
-      name: "Kristen Viller",
+      name: "For Parties",
       title: "TRAINER",
-      imgSrc: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/team/img2.jpg",
+      imgSrc: "https://www.boat-lifestyle.com/cdn/shop/files/Ranveer.png?v=1726038549",
     },
     {
-      name: "Johanna Care",
-      title: "TRAINER",
-      imgSrc: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/team/img3.jpg"
+      name: "For Work",
+      title: "CEO",
+      imgSrc: "https://www.boat-lifestyle.com/cdn/shop/files/Aman.png?v=1726038424"
     },
     {
-      name: "Bruce Willamson",
+      name: "For Audiophiles",
       title: "TRAINER",
-      imgSrc: "https://webthemez.com/demo/gogym-single-page-bootstrap-4-template/assets/img/team/img4.jpg"
+      imgSrc: "https://www.boat-lifestyle.com/cdn/shop/files/YJ.png?v=1726059363"
     },
   ];
 
