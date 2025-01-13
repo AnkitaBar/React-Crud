@@ -23,6 +23,7 @@ import SweetAlertComponent from '../../../ui/sweetalert/SweetAlert';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import useDarkMode from 'use-dark-mode';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -87,7 +88,7 @@ const ProductList = () => {
   };
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div style={{ padding: '20px', textAlign: 'center', marginTop:'100px' }}>
       <Button variant="contained" onClick={toggleView} style={{ marginBottom: '20px' }}>
         {showTable ? 'Show Card View' : 'Show Table View'}
       </Button>
@@ -226,6 +227,7 @@ const ProductList = () => {
         />
       )}
     </div>
+   
   );
 };
 

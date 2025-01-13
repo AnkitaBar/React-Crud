@@ -335,21 +335,21 @@ const Header = () => {
     <div>
       <AppBar position="fixed" style={{ backgroundColor: "#5b636a" }}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="logo"
             sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <LocalLibraryIcon />
-          </IconButton>
+          > */}
+            {/* <LocalLibraryIcon /> */}
+          {/* </IconButton> */}
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-            FrontEnd PathSala
+            Ekart
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link
@@ -455,21 +455,21 @@ const Header = () => {
               {drawerList}
             </Drawer>
           </Box>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="logo"
             sx={{ display: { xs: "flex", md: "none" } }}
-          >
-            <LocalLibraryIcon />
-          </IconButton>
+          > */}
+            {/* <LocalLibraryIcon /> */}
+          {/* </IconButton> */}
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            FrontEnd PathSala
+            EKart
           </Typography>
         </Toolbar>
       </AppBar>
